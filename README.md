@@ -8,12 +8,6 @@ Table of contents
 <!--ts-->
 * [Installation](#installation)
    * [Usage](#usage)
-      * [STDIN](#stdin)
-      * [Local files](#local-files)
-   * [Tests](#tests)
-   * [Dependency](#dependency)
-   * [Docker](#docker)
-     * [Local](#local)
 * [About the Code](#about-the-code)
 * [Chess Engine](#chess-engine)
 * [Piece-Square Tables](#Piece-Square-Tables)
