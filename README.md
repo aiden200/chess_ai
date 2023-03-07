@@ -18,6 +18,7 @@ Table of contents
 * [Chess Engine](#chess-engine)
 * [Piece-Square Tables](#Piece-Square-Tables)
 * [Chess Piece Values](#Chess-Piece-Values)
+* [Openers](#openers)
 * [Future Implementations](#future-implementations)
 * [The Algorithm](#the-algorithm)
 <!--te-->
@@ -96,4 +97,6 @@ Future Implementations
 
 The Algorithm
 ============
-The algorithm uses minimax and alpha beta pruning to speed up the process. 
+The chess AI uses the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax) to decide its next move. It uses [alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning) to speed up the process. I will describe these algorithms in detail in this section.
+
+Black pieces have positive weights, and white pieces have negative weights in this game. Therefore, if the AI was playing as the black player, it would want to make the score as big as possible, and vise versa.
