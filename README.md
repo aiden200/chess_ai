@@ -1,6 +1,4 @@
-# chess_ai
-Chess AI
-
+# Chess AI
 
 Table of contents
 =================
@@ -20,6 +18,30 @@ Table of contents
 
 Installation
 ============
+## How to run the code
+
+Clone the github repository, install and activate python venv. 
+
+Install a python virtual environment (Optional):
+```
+python3 -m venv [path to virtual environment]
+```
+
+To start virtual environment and install required packages:
+```
+cd [path to virtual environment]
+source bin/activate
+pip install -r requirements.txt
+```
+
+# Usages:
+- Simulate the AI going against itself by typing in:
+```
+python3 simulate.py
+```
+The AI will battle against itelf with a [plie](#the-algorithm) value of 3.
+
+
 
 About the Code
 ============

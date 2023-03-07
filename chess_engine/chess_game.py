@@ -11,13 +11,19 @@ class Chess_game:
         self.winner = None
         self.turn = 1 # white, min player
         self.plies = plies #depth of looking, deeper the better but slower
+        self.counts = 0 #prevents inf loops
 
 
     def auto_play_game(self):
 
         while True:
+            self.counts += 1
+            if self.turn:
+                print("White Turn")
+            else:
+                print("Black Turn")
             move = self.make_move()
-            if self.winner != None:
+            if self.winner != None or not move or self.counts > 1000:
                 break
             self.board.push(move)
             if self.turn:
