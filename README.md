@@ -142,10 +142,14 @@ Black pieces have positive weights, and white pieces have negative weights in th
 
 In this example, our AI will be the black player. This means the AI will try to maximize his score.
 At any given state of the board, we can ask the total value of the board. 
-To find the total value of the board, we will first sum up all the [values of the pieces](#chess-piece-values) alive
+To find the total value of the board, we will sum up all the [values of the pieces](#chess-piece-values) alive and add that to the total PST value for each piece.
 
-for every piece alive on the board $p_i$ and its respective value $v_i$
-total_piece_value = $\sum p_i*v_i$
+- for every piece alive on the board $p_i$ and its respective value $v_i$, total_piece_value = $\sum p_i*v_i$
+- for every black piece alive on the board $pb_i$, total_pst_value_black = $\sum pst[pb_i]$
+- Similarly for white, for every white piece alive on the board $pb_i$, total_pst_value_black = $-\sum pst[pb_i]$
 
-```total_value = [every piece alive*its respective value] + ev```
+So the total value of the board can be represented as:
+```total_value = total_piece_value + total_pst_value_black + total_pst_value_black```
+
+
 
