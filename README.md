@@ -98,6 +98,9 @@ As you can see, the knights are more favorable to be in positions in the middle.
 
 These values make sense in the early game, but make less sense as the chess game approaches the endgame. To combat this, tapered evaluation implemented which gives the engine two sets of PST's, one set for the opening/middle-game, and one for the endgame. As the game progresses, the game engine slowly shifts its PST values towards the endgame board.
 
+> **Note**
+> tapered evaluation not implemented yet
+
 The code will look something like this:
 ```
 eval = ((opening * (256 - phase)) + (endgame * phase)) / 256
@@ -126,7 +129,8 @@ Check out [this page](https://github.com/AnshGaikwad/Chess-World/tree/master/boo
 Future Implementations
 ============
 - Have a faster running program. Possibly implementing multiprocessing to speed up the search or switch to a faster programming language like C.
-- Have a dictionary of openers to speed up the starting process and start the game off more effectively in playing.
+- ~~Have a dictionary of openers to speed up the starting process and start the game off more effectively in playing.~~
+- Tapered evaluation
 
 
 
@@ -135,3 +139,4 @@ The Algorithm
 The chess AI uses the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax) to decide its next move. It uses [alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning) to speed up the process. I will describe these algorithms in detail in this section.
 
 Black pieces have positive weights, and white pieces have negative weights in this game. Therefore, if the AI was playing as the black player, it would want to make the score as big as possible, and vise versa.
+
