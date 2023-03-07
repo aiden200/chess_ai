@@ -1,7 +1,9 @@
 import chess
-import chess.polygot
-from piece_values import *
+import chess.polyglot
+from .piece_values import *
+import os
 
+path = os.path.dirname(os.path.abspath(__file__))
 
 class Chess_game:
     def __init__(self, plies) -> None:
@@ -11,7 +13,7 @@ class Chess_game:
         self.plies = plies #depth of looking, deeper the better but slower
 
 
-    def play_game(self):
+    def auto_play_game(self):
 
         while True:
             move = self.make_move()
@@ -22,6 +24,8 @@ class Chess_game:
                 self.turn = 0
             else:
                 self.turn = 1
+            print(self.board)
+            print("="*20)
         
         return self.winner
         
@@ -43,14 +47,14 @@ class Chess_game:
             return 
         try:
             #Reading from openers
-            move = chess.polyglot.MemoryMappedReader("./books/human.bin").weighted_choice(self.board).move
+            move = chess.polyglot.MemoryMappedReader(f"{path}/books/human.bin").weighted_choice(self.board).move
             return move
         except:
             #minimax alpha beta
             if self.turn == 1:
-                move = self.min_value(self.board, self.plies, float('-inf'),float('inf'))[1]
+                move = self.min_value( self.plies, float('-inf'),float('inf'))[1]
             else:
-                move = self.max_value(self.board, self.plies, float('-inf'),float('inf'))[1]
+                move = self.max_value( self.plies, float('-inf'),float('inf'))[1]
             return move
     
     def min_value(self, plies : int, alpha : int, beta : int):
@@ -59,7 +63,7 @@ class Chess_game:
         best : int = float('inf')
         final_move = None
         # get all legal moves and search to find best one for min player
-        legal_moves = self.board.get_legal_moves()
+        legal_moves = self.board.legal_moves
         for move in legal_moves:
             self.board.push(move)
             value = self.max_value(plies-1, alpha, beta)[0]
@@ -79,7 +83,7 @@ class Chess_game:
         best : int = float('-inf')
         final_move = None
         # get all legal moves and search to find best one for max player
-        legal_moves = self.board.get_legal_moves()
+        legal_moves = self.board.legal_moves
         for move in legal_moves:
             self.board.push(move)
             value = self.min_value(plies-1, alpha, beta)[0]
