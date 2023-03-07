@@ -110,14 +110,14 @@ Chess Piece Values
 ============
 Found this ratio on the internet. Since i'm not a chess expert, I trust the internet more than myself.
 
-| Piece | Weight |
-| --- | --- |
-| Pawn | 100 |
-| Knight | 300 |
-| Bishop | 300 |
-| Rook | 500 |
-| Queen | 900 |
-| King | 100000 |
+| Piece | Weight(Black) | Weight(White) | 
+| --- | --- | --- |
+| Pawn | 100 | -100 |
+| Knight | 300 | -300 |
+| Bishop | 300 | -300 |
+| Rook | 500 | -500 |
+| Queen | 900 | -900 |
+| King | 100000 | -100000 |
 
 Openers
 ============
@@ -139,4 +139,13 @@ The Algorithm
 The chess AI uses the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax) to decide its next move. It uses [alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning) to speed up the process. I will describe these algorithms in detail in this section.
 
 Black pieces have positive weights, and white pieces have negative weights in this game. Therefore, if the AI was playing as the black player, it would want to make the score as big as possible, and vise versa.
+
+In this example, our AI will be the black player. This means the AI will try to maximize his score.
+At any given state of the board, we can ask the total value of the board. 
+To find the total value of the board, we will first sum up all the [values of the pieces](#chess-piece-values) alive
+
+for every piece alive on the board $p_i$ and its respective value $v_i$
+total_piece_value = $\sum p_i*v_i$
+
+```total_value = [every piece alive*its respective value] + ev```
 
