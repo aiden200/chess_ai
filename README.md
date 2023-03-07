@@ -49,16 +49,16 @@ python3 app.py
 In the user input, first type in the location of the piece you want to move then its destination.
 If the move is not legal, the text message that says "human move" will change to "illegal move".
 For example, if I want to move a piece from e6 to e5, I would type in "e6e5".
-**Warning**
-There is a known bug with the undo button, please only use the reset button and the human move
+> **Warning**
+> There is a known bug with the undo button, please only use the reset button and the human move
 
 
 Activate the discord chess bot by typing in:
 ```
 python3 discord_bot_activate
 ```
-**Warning**
-Functionality not implemented yet
+> **Warning**
+> Functionality not implemented yet
 
 
 
