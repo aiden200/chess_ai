@@ -139,7 +139,7 @@ The Algorithm
 ============
 In the initial opening stage, we don't use any algorithms to save some time. The AI follows a binary file containing some opener moves. If the AI sees an opener move, it uses it.
 
-The chess AI uses the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax) to decide its next move. It uses [alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning) to speed up the process. I will describe these algorithms in detail in this section.
+The chess AI uses the [minimax algorithm](#minimax-algorithm) to decide its next move. It uses [alpha-beta pruning](#alpha-beta-pruning) to speed up the process. I will describe these algorithms in detail in this section.
 
 Black pieces have positive weights, and white pieces have negative weights in this game. Therefore, if the AI was playing as the black player, it would want to make the score as big as possible, and vise versa.
 
@@ -156,6 +156,30 @@ So the total value of the board can be represented as:
 
 
 ### Minimax Algorithm
+This is the wiki page to the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax). 
+The min player in this case will be the white player, and the max player is the black player. 
+When the game is initialized, self.plies is chosen. This is the maximum recursion depth the min player algorithm and the max player algorithm will look into. Each algorithm will assume that the other will choose the most optimal algorithm. 
+
+This means that at the end of each choice move, at the leaf of the tree for that move, there should be either 
+- 0 plies, meaning its hit its depth and returns the board value at that given state
+- a terminal state, which we can return the state of the board at that given point (the winner)
+
+As you can imagine, this does have its downsides. there is an average around 40 moves a turn. If $m$ is the maximum depth of the tree (which is our plies) and $b$ being our branching factor (which is an average of 40)
+- The time complexity of minimax is $O(b^m)$
+- The space complexity is $O(bm)$
+
+If plies = 5, then we have 102400000 possible moves to consider each turn. If you haven't noticed, this is very slow.
+
+### Alpha-Beta Pruning
+This is the wiki page to the [minimax algorithm](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). You can read the details of the math somewhere else, but essentially alpha-beta pruning speads up the process of minimax, pruning the nodes that we know that will not be chosen. 
+
+Say that the AI had 3 possible moves to make. In this example, the AI is trying to maximize its score. After traversing down the first move, we get a score of 5. So the AI decides to explore move 2. While traversing down, it realizes that if the other player chooses optimally, they will choose a score resulting a lower score than 5. As soon as this is true, we eliminate looking at the different possibilities when traversing down move 2 because no matter what, move 1 is better than move 2. 
+
+Implementing alpha beta pruning decreases the average runtime and space complexity, but the worse case time and space complexity are still the same.
+
+
+
+### MCTS Algorithm
 
 
 
