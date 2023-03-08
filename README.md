@@ -1,5 +1,8 @@
 # Chess AI
 
+## Check out my Website
+https://www.aidenwchang.com/
+
 Table of contents
 =================
 
