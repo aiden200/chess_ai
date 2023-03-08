@@ -1,7 +1,6 @@
 # Chess AI by Aiden Chang
 
-## Check out my Website
-https://www.aidenwchang.com/
+### Check out my [Website](https://www.aidenwchang.com/)!
 
 Table of contents
 =================
