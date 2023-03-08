@@ -1,4 +1,4 @@
-# Chess AI
+# Chess AI by Aiden Chang
 
 ## Check out my Website
 https://www.aidenwchang.com/
