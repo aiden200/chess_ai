@@ -131,6 +131,7 @@ Future Implementations
 - Have a faster running program. Possibly implementing multiprocessing to speed up the search or switch to a faster programming language like C.
 - ~~Have a dictionary of openers to speed up the starting process and start the game off more effectively in playing.~~
 - Tapered evaluation
+- Implement MCTS algorithm
 
 
 
@@ -155,6 +156,7 @@ So the total value of the board can be represented as:
 
 
 ### Minimax Algorithm
+
 
 
 

@@ -64,14 +64,14 @@ class Chess_game:
             return move
     
     def min_value(self, plies : int, alpha : int, beta : int):
+        if plies == 0:
+            return self.evaluate_board(), None
         if self.board.is_checkmate():
             return 9999, None
         if self.board.is_stalemate():
             return 0, None
         if self.board.is_insufficient_material():
             return 0, None
-        if plies == 0:
-            return self.evaluate_board(), None
         best : int = float('inf')
         final_move = None
         # get all legal moves and search to find best one for min player
@@ -90,14 +90,14 @@ class Chess_game:
     
     
     def max_value(self, plies : int, alpha : int, beta : int):
+        if plies == 0:
+            return self.evaluate_board(), None
         if self.board.is_checkmate():
             return -9999, None
         if self.board.is_stalemate():
             return 0, None
         if self.board.is_insufficient_material():
             return 0, None
-        if plies == 0:
-            return self.evaluate_board(), None
         best : int = float('-inf')
         final_move = None
         # get all legal moves and search to find best one for max player
