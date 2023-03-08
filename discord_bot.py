@@ -1,4 +1,5 @@
 import discord
+from discord_token import token
 from chess_engine.chess_game import Chess_game
 
 
@@ -16,4 +17,4 @@ def activate_bot():
     intents.message_content = True
 
     client = MyClient(intents=intents)
-    client.run('MTA4MzA3ODQ1MTIzNTQxMDEyMA.Gn9dew.HB4orH1xA29T3ql5AqYpqGULE2gPMEJxl-aHGI')
+    client.run(token)
