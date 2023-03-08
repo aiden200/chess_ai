@@ -173,7 +173,7 @@ As you can imagine, this does have its downsides. there is an average around 40 
 If plies = 5, then we have 102400000 possible moves to consider each turn. If you haven't noticed, this is very slow.
 
 ### Alpha-Beta Pruning
-This is the wiki page to the [minimax algorithm](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). You can read the details of the math somewhere else, but essentially alpha-beta pruning speads up the process of minimax, pruning the nodes that we know that will not be chosen. 
+This is the wiki page to the [alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). You can read the details of the math somewhere else, but essentially alpha-beta pruning speads up the process of minimax, pruning the nodes that we know that will not be chosen. 
 
 Say that the AI had 3 possible moves to make. In this example, the AI is trying to maximize its score. After traversing down the first move, we get a score of 5. So the AI decides to explore move 2. While traversing down, it realizes that if the other player chooses optimally, they will choose a score resulting a lower score than 5. As soon as this is true, we eliminate looking at the different possibilities when traversing down move 2 because no matter what, move 1 is better than move 2. 
 
