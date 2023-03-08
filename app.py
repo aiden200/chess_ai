@@ -27,6 +27,9 @@ def main():
             game.turn = 0
     except Exception as e:
         print(f"crashed in AI turn with exception {e}")
+    if game.winner != None:
+        game_over = True
+        message = game.winner
 
     ret = '<html><head>'
     ret += '<style>input {font-size: 20px; } button { font-size: 20px; }</style>'

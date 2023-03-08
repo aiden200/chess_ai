@@ -30,8 +30,19 @@ class Chess_game:
                 self.turn = 0
             else:
                 self.turn = 1
-            print(self.board)
-            print("="*20)
+            board_string = str(self.board)
+            temp_string = ''
+            number = 1
+            for i in range(len(board_string)):
+                if board_string[i] == '\n':
+                    temp_string = f"{temp_string} {str(number)}\n{str(number+1)} "
+                    number += 1
+                else:
+                    temp_string = temp_string + board_string[i]
+            temp_string = f"1 {temp_string} 8"
+            board_string = f"  a b c d e f g h  \n{temp_string}\n  a b c d e f g h   \n{'='*20}"
+            print(board_string)
+
         
         return self.winner
         

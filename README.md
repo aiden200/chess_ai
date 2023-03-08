@@ -55,7 +55,7 @@ For example, if I want to move a piece from e6 to e5, I would type in "e6e5".
 
 Activate the discord chess bot by typing in:
 ```
-python3 discord_bot_activate
+python3 discord_bot_activate.py
 ```
 > **Warning**
 > Functionality not implemented yet
@@ -68,7 +68,7 @@ I do know how to play chess, but not at a competetive level. It is entirely poss
 
 Chess Engine
 ============
-The chess engine itself is a python library called python-chess. 
+The chess engine itself is a python library called python-chess. This will set up the basics such as creating a new chess board, moving the pieces given a command, etc. Our code focuses only on the state of the board and the decision making process.
 You can install is using the command:
 ```
 pip install python-chess
