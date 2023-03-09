@@ -57,7 +57,7 @@ For example, if I want to move a piece from e6 to e5, I would type in "e6e5".
 
 Activate the discord chess bot by typing in:
 ```
-python3 discord_bot_activate.py
+python3 discord_bot.py
 ```
 > **Warning**
 > Functionality not implemented yet
