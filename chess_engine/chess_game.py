@@ -55,13 +55,13 @@ class Chess_game:
                 self.winner = "White"
             else:
                 self.winner = "Black"
-            return
+            return 0
         if self.board.is_stalemate():
             self.winner = "Stalemate"
-            return
+            return 0
         if self.board.is_insufficient_material():
             self.winner = "Stalemate"
-            return 
+            return 0
         try:
             #Reading from openers
             move = chess.polyglot.MemoryMappedReader(f"{path}/books/human.bin").weighted_choice(self.board).move
