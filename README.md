@@ -71,7 +71,7 @@ I do know how to play chess, but not at a competetive level. It is entirely poss
 Chess Engine
 ============
 The chess engine itself is a python library called python-chess. This will set up the basics such as creating a new chess board, moving the pieces given a command, etc. Our code focuses only on the state of the board and the decision making process.
-You can install is using the command:
+You can install it using the command:
 ```
 pip install python-chess
 ```
